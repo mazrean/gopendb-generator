@@ -1,0 +1,91 @@
+config:
+  dbms: mysql
+  version: 8.0
+  database: test
+tables:
+  - id: user
+    description: ユーザーテーブル
+    name: users
+    engin: InnoDB
+    char_set: utf8mb4
+    max_rows: 100000
+    min_rows: 10
+    avg_row_length: 100
+    primary_key:
+      columns:
+        - name: id
+          length: 10
+          direction: asc
+      options:
+        type: btree
+        key_block_size: 0
+        parser: my_parser
+    columns:
+      - id: id
+        description: ユーザーID
+        name: id
+        type:
+          name: int
+          length: 11
+        extra:
+          auto_increment: true
+          format: default
+          storage: disk
+      - id: name
+        description: ユーザー名
+        name: name
+        type:
+          name: text
+      - id: created_at
+        description: ユーザー作成日時
+        name: created_at
+        type:
+          name: datetime
+      - id: deleted_at
+        description: ユーザー削除日時
+        name: deleted_at
+        type:
+          name: datetime
+  - id: message
+    description: メッセージテーブル
+    name: messages
+    primary_key:
+      columns:
+        - name: id
+    columns:
+      - id: id
+        description: メッセージID
+        name: id
+        type:
+          name: int
+          length: 11
+        extra:
+          auto_increment: true
+      - id: user_id
+        description: ユーザーID
+        name: user_id
+        type:
+          name: int
+          length: 11
+        reference:
+          - table: user
+            match: full
+            on_delete: restrict
+            on_update: restrict
+            columns:
+              - name: id
+      - id: body
+        description: メッセージ本体
+        name: body
+        type:
+          name: text
+      - id: created_at
+        description: メッセージ作成日時
+        name: created_at
+        type:
+          name: datetime
+      - id: deleted_at
+        description: メッセージ削除日時
+        name: deleted_at
+        type:
+          name: datetime

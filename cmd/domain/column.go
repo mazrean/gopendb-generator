@@ -25,7 +25,7 @@ type Column struct {
 	ID          string `yaml:"id"`
 	Description string `yaml:"description"`
 	Name        string `yaml:"name"`
-	Type        string `yaml:"type"`
+	Type        Type   `yaml:"type"`
 	Null        bool   `yaml:"null"`
 	Default     string `yaml:"dafault"`
 }

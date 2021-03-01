@@ -10,7 +10,7 @@ const (
 
 // Config 全体に関わる設定(yaml用)
 type Config struct {
-	DBMS
-	Version  string
-	Database string
+	DBMS     `yaml:"dbms"`
+	Version  string `yaml:"version"`
+	Database string `yaml:"database"`
 }
