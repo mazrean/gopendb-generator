@@ -8,14 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestReader(t *testing.T) {
-	t.Parallel()
-
-	t.Run("ReadYAML", readYAMLTest)
-}
-
 func readYAMLTest(t *testing.T) {
-	t.Parallel()
 	t.Helper()
 
 	assertion := assert.New(t)
