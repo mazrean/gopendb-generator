@@ -8,6 +8,8 @@ const (
 	Btree IndexType = "btree"
 	// Hash Hashインデックス
 	Hash IndexType = "hash"
+	// IndexTypeDefault デフォルト
+	IndexTypeDefault IndexType = ""
 )
 
 // IndexDirection インデックスの方向
@@ -18,6 +20,8 @@ const (
 	Asc IndexDirection = "asc"
 	// Desc 降順
 	Desc IndexDirection = "desc"
+	// IndexDirectionDefault デフォルト
+	IndexDirectionDefault IndexDirection = ""
 )
 
 // IndexOption インデックスのオプション
@@ -28,7 +32,7 @@ type IndexOption struct {
 
 // IndexColumn インデックスを貼るカラム
 type IndexColumn struct {
-	Name      string `yaml:"name"`
-	Length    int    `yaml:"length"`
-	Direction string `yaml:"direction"`
+	Name      string         `yaml:"name"`
+	Length    int            `yaml:"length"`
+	Direction IndexDirection `yaml:"direction"`
 }

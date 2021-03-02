@@ -29,7 +29,7 @@ tables:
           length: 11
         extra:
           auto_increment: true
-          format: default
+          format: dynamic
           storage: disk
       - id: name
         description: ユーザー名

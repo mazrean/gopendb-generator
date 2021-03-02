@@ -10,6 +10,8 @@ const (
 	Partial Match = "partial"
 	// Simple NULL許容
 	Simple Match = "simple"
+	// MatchDefault デフォルト
+	MatchDefault Match = ""
 )
 
 // ReferenceOption 外部キーの削除時の処理
@@ -24,6 +26,8 @@ const (
 	SetNull ReferenceOption = "set_null"
 	// NoAction エラーになる
 	NoAction ReferenceOption = "no_action"
+	// ReferenceOptionDefault デフォルト
+	ReferenceOptionDefault ReferenceOption = ""
 )
 
 // Reference 外部キーの構造体(yaml用)

@@ -22,7 +22,7 @@ func (*Reader) ReadYAML(path string) error {
 		return fmt.Errorf("failed to open file: %w", err)
 	}
 
-	err = yaml.NewDecoder(file).Decode(config)
+	err = yaml.NewDecoder(file).Decode(&config)
 	if err != nil {
 		return fmt.Errorf("failed to decode yaml: %w", err)
 	}
